@@ -12,7 +12,11 @@ export const site = {
   address: "Cra. 29 #23-9, Palmira, Valle del Cauca",
   addressShort: "Cra. 29 #23-9",
   city: "Palmira, Valle del Cauca",
-  mapsQuery: "Cra. 29 #23-9, Palmira, Valle del Cauca, Colombia",
+  // Texto de la dirección para geocodificar (formato canónico).
+  mapsQuery: "Carrera 29 # 23-9, Palmira, Valle del Cauca, Colombia",
+  // Coordenadas EXACTAS del local "lat,lng". Cuando se tengan (desde el enlace
+  // de Google Maps del negocio), el mapa usa el pin exacto en vez del texto.
+  mapsCoords: "", // ej: "3.5256703,-76.3000872"
   hours: "Lunes a Sábado · con cita previa",
 } as const;
 
@@ -23,6 +27,9 @@ export function whatsappLink(message?: string): string {
 }
 
 // Enlace al mapa embebido de Google Maps (no requiere API key).
-export const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
-  site.mapsQuery,
-)}&z=16&output=embed`;
+// Si hay coordenadas exactas, las usa (pin preciso); si no, geocodifica el texto.
+export const mapsEmbedUrl = site.mapsCoords
+  ? `https://maps.google.com/maps?q=${site.mapsCoords}&z=18&output=embed`
+  : `https://maps.google.com/maps?q=${encodeURIComponent(
+      site.mapsQuery,
+    )}&z=17&output=embed`;
