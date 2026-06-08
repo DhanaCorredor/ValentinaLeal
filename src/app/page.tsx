@@ -1,0 +1,215 @@
+import Image from "next/image";
+import Link from "next/link";
+import { site, whatsappLink, mapsEmbedUrl } from "@/data/site";
+import { serviceCategories } from "@/data/services";
+
+export default function Home() {
+  const reservar = whatsappLink(
+    `Hola 👋, quiero reservar una cita en ${site.fullName}.`,
+  );
+
+  return (
+    <>
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-paper px-5 pb-16 pt-10 text-center">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(201,162,75,0.12),transparent_60%)]" />
+        <div className="relative mx-auto max-w-2xl">
+          <Image
+            src="/logo.png"
+            alt={site.fullName}
+            width={3375}
+            height={4219}
+            priority
+            className="mx-auto mb-2 h-auto w-56 sm:w-64"
+          />
+          <h1 className="font-serif text-[2.6rem] font-semibold leading-tight sm:text-6xl">
+            El arte de unas <span className="gold-text">uñas perfectas</span>
+          </h1>
+          <p className="mx-auto mt-4 max-w-md text-base text-ink-soft sm:text-lg">
+            Manicura, pedicura y diseño en gel, acrílico y poly gel. Cada
+            detalle cuidado para que tus manos hablen por ti.
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <a
+              href={reservar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gold-bg rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
+            >
+              Reservar por WhatsApp
+            </a>
+            <Link
+              href="/servicios"
+              className="rounded-sm border border-[#d8d2c8] px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-ink transition hover:border-gold hover:text-gold-deep"
+            >
+              Ver servicios
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FRANJA DE DATOS */}
+      <section className="grid grid-cols-2 border-y border-gold/35 md:grid-cols-4">
+        {[
+          { big: "+20", small: "Servicios" },
+          { big: "Gel · Acrílico", small: "Poly gel · Dipping" },
+          { big: site.addressShort, small: "Palmira, V. del Cauca" },
+          { big: site.phone, small: "Citas" },
+        ].map((s, i) => (
+          <div
+            key={i}
+            className="border-b border-line px-3 py-5 text-center last:border-b-0 odd:border-r odd:border-line md:border-b-0 md:[&:not(:last-child)]:border-r"
+          >
+            <div className="gold-text font-serif text-xl sm:text-2xl">{s.big}</div>
+            <span className="mt-1 block text-[10px] uppercase tracking-[0.12em] text-ink-soft">
+              {s.small}
+            </span>
+          </div>
+        ))}
+      </section>
+
+      {/* SERVICIOS (resumen → pestaña aparte) */}
+      <section className="px-5 py-14">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 h-0.5 w-12 rounded gold-bg" />
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
+            Carta de servicios
+          </p>
+          <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+            Nuestros <span className="gold-text">servicios</span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-md text-ink-soft">
+            Más de 20 servicios de manicura, pedicura y diseño de uñas. Mira la
+            carta completa con precios.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+            {serviceCategories.map((c) => (
+              <span
+                key={c.title}
+                className="rounded-full border border-line px-4 py-2 text-sm text-ink-soft"
+              >
+                {c.title}
+              </span>
+            ))}
+          </div>
+
+          <Link
+            href="/servicios"
+            className="gold-bg mt-9 inline-block rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
+          >
+            Ver todos los servicios →
+          </Link>
+        </div>
+      </section>
+
+      {/* NOSOTRAS */}
+      <section id="nosotras" className="bg-paper px-5 py-14">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
+          <div className="flex aspect-[4/3] items-center justify-center rounded border border-gold/35 bg-white p-4 text-center text-xs uppercase tracking-[0.12em] text-ink-soft md:aspect-[4/5]">
+            [ Foto del estudio / trabajos ]
+          </div>
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
+              Sobre el estudio
+            </p>
+            <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+              Donde el <span className="gold-text">detalle</span> lo es todo
+            </h2>
+            <p className="mt-5 text-ink-soft">
+              En {site.fullName} creemos que unas uñas bien cuidadas son un
+              gesto de elegancia. Trabajamos con productos premium y técnicas de
+              larga duración en un espacio pensado para tu comodidad.
+            </p>
+            <p className="mt-3 text-ink-soft">
+              Bioseguridad, materiales de primera calidad y un acabado impecable
+              en cada cita.
+            </p>
+            <a
+              href={reservar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block rounded-sm border border-ink bg-ink px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition hover:bg-black"
+            >
+              Agenda tu cita
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* UBICACIÓN */}
+      <section id="ubicacion" className="px-5 py-14">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-8 text-center">
+            <div className="mx-auto mb-4 h-0.5 w-12 rounded gold-bg" />
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
+              Cómo llegar
+            </p>
+            <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+              Nuestra <span className="gold-text">ubicación</span>
+            </h2>
+          </div>
+          <div className="grid items-center gap-8 md:grid-cols-2">
+            <div className="overflow-hidden rounded border border-gold/35">
+              <iframe
+                src={mapsEmbedUrl}
+                title={`Ubicación de ${site.fullName}`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="aspect-square w-full md:aspect-[4/3]"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <h3 className="font-serif text-2xl font-semibold sm:text-3xl">
+                {site.fullName}
+              </h3>
+              <p className="mt-4 text-ink-soft">
+                <strong className="font-medium text-ink">Dirección:</strong>{" "}
+                {site.address}
+              </p>
+              <p className="mt-2 text-ink-soft">
+                <strong className="font-medium text-ink">Horario:</strong>{" "}
+                {site.hours}
+              </p>
+              <p className="mt-2 text-ink-soft">
+                <strong className="font-medium text-ink">Teléfono:</strong>{" "}
+                {site.phone}
+              </p>
+              <a
+                href={reservar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gold-bg mt-6 inline-block rounded-sm border border-gold px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407]"
+              >
+                Reservar cita
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="reservar" className="bg-ink px-5 py-16 text-center text-white">
+        <div className="mx-auto max-w-2xl">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-light">
+            Reserva tu cita
+          </p>
+          <h2 className="font-serif text-4xl font-semibold sm:text-6xl">
+            ¿Lista para <span className="gold-text">consentirte</span>?
+          </h2>
+          <p className="mt-4 text-base text-[#bdb6aa] sm:text-lg">
+            Escríbenos por WhatsApp y agenda en segundos.
+          </p>
+          <a
+            href={reservar}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="gold-bg mt-8 inline-block rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
+          >
+            Reservar por WhatsApp →
+          </a>
+        </div>
+      </section>
+    </>
+  );
+}

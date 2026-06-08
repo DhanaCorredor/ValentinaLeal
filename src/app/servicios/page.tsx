@@ -1,0 +1,98 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { serviceCategories, formatCOP } from "@/data/services";
+import { site, whatsappLink } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: `Servicios y precios | ${site.fullName}`,
+  description:
+    "Carta completa de servicios de uñas con precios: manicura, pedicura, semipermanente, gel, acrílico, poly gel, retiros y adicionales.",
+};
+
+export default function ServiciosPage() {
+  return (
+    <div className="px-5 py-12">
+      <div className="mx-auto max-w-3xl">
+        {/* Encabezado */}
+        <div className="text-center">
+          <div className="mx-auto mb-4 h-0.5 w-12 rounded gold-bg" />
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
+            Carta de servicios
+          </p>
+          <h1 className="font-serif text-4xl font-semibold sm:text-6xl">
+            Nuestros <span className="gold-text">servicios</span>
+          </h1>
+          <p className="mx-auto mt-3 max-w-md text-ink-soft">
+            Precios en pesos colombianos (COP). Toca cualquier servicio para
+            reservar tu cita por WhatsApp.
+          </p>
+        </div>
+
+        {/* Categorías */}
+        <div className="mt-10 space-y-10">
+          {serviceCategories.map((category) => (
+            <section key={category.title}>
+              <div className="mb-4 flex items-center gap-4">
+                <h2 className="whitespace-nowrap font-serif text-2xl font-semibold text-gold-deep">
+                  {category.title}
+                </h2>
+                <span className="h-px flex-1 bg-gold/35" />
+              </div>
+
+              <ul className="space-y-2.5">
+                {category.items.map((service) => (
+                  <li key={service.name}>
+                    <a
+                      href={whatsappLink(
+                        `Hola 👋, quiero reservar: ${service.name} (${formatCOP(
+                          service.price,
+                        )}).`,
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-baseline justify-between gap-3 rounded border border-line bg-white px-4 py-4 transition hover:border-gold hover:shadow-sm"
+                    >
+                      <span className="text-[15px]">{service.name}</span>
+                      <span className="min-w-0 flex-1 translate-y-[-4px] border-b border-dotted border-[#cfc8bb]" />
+                      <span className="gold-text whitespace-nowrap font-serif text-lg font-semibold">
+                        {formatCOP(service.price)}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+
+        {/* CTA final */}
+        <div className="mt-12 rounded border border-gold/35 bg-paper px-6 py-10 text-center">
+          <h2 className="font-serif text-3xl font-semibold">
+            ¿Tienes <span className="gold-text">dudas</span>?
+          </h2>
+          <p className="mx-auto mt-2 max-w-sm text-ink-soft">
+            Escríbenos y te asesoramos sobre el servicio ideal para ti.
+          </p>
+          <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+            <a
+              href={whatsappLink(
+                `Hola 👋, quiero reservar una cita en ${site.fullName}.`,
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gold-bg rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
+            >
+              Reservar por WhatsApp
+            </a>
+            <Link
+              href="/"
+              className="rounded-sm border border-[#d8d2c8] px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-ink transition hover:border-gold hover:text-gold-deep"
+            >
+              Volver al inicio
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
