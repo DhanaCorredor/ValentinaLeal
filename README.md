@@ -3,6 +3,8 @@
 Sitio web del studio de uñas **Valentina Leal** (Palmira, Valle del Cauca). Mobile-first,
 con carta de servicios y reservas por WhatsApp.
 
+🌐 **En vivo:** [valentina-leal.vercel.app](https://valentina-leal.vercel.app)
+
 ## Tecnologías
 
 - [Next.js 16](https://nextjs.org) (App Router) + React 19 + TypeScript
@@ -40,6 +42,11 @@ src/
   data/                 site.ts (negocio) y services.ts (carta)
 public/logo.png         Logo
 ```
+
+## Despliegue
+
+Alojado en **[Vercel](https://vercel.com)**. Cada `git push` a la rama `main` se
+publica automáticamente en producción; cada rama o PR genera una *preview* propia.
 
 ## Contacto del negocio
 
