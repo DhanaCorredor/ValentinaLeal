@@ -1,4 +1,4 @@
-import { site, whatsappLink } from "@/data/site";
+import { linkReserva } from "@/data/site";
 
 // Botón flotante (FAB) de WhatsApp: un "globito" fijo en la esquina inferior
 // derecha. Reemplaza a la antigua barra inferior y abre el chat con el mensaje
@@ -6,7 +6,7 @@ import { site, whatsappLink } from "@/data/site";
 export default function ReserveBar() {
   return (
     <a
-      href={whatsappLink(`Hola 👋, quiero reservar una cita en ${site.fullName}.`)}
+      href={linkReserva()}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Reservar por WhatsApp"

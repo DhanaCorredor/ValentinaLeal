@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site, whatsappLink } from "@/data/site";
+import { site, linkReserva } from "@/data/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] px-5 py-12 text-center text-[#cfc8bb]">
+    <footer className="bg-ink-deep px-5 py-12 text-center text-[#cfc8bb]">
       <div className="mx-auto max-w-6xl">
         <Image
           src="/logo.png"
@@ -21,7 +21,7 @@ export default function Footer() {
               Contacto
             </h4>
             <a
-              href={whatsappLink(`Hola 👋, quiero reservar una cita en ${site.fullName}.`)}
+              href={linkReserva()}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-sm transition-colors hover:text-gold-light"

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { serviceCategories, formatCOP } from "@/data/services";
-import { site, whatsappLink } from "@/data/site";
+import { whatsappLink, linkReserva } from "@/data/site";
+import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Servicios y precios",
@@ -71,22 +71,12 @@ export default function ServiciosPage() {
             Escríbenos y te asesoramos sobre el servicio ideal para ti.
           </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href={whatsappLink(
-                `Hola 👋, quiero reservar una cita en ${site.fullName}.`,
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gold-bg rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
-            >
+            <Button href={linkReserva()} external>
               Reservar por WhatsApp
-            </a>
-            <Link
-              href="/"
-              className="rounded-sm border border-[#d8d2c8] px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-ink transition hover:border-gold hover:text-gold-deep"
-            >
+            </Button>
+            <Button href="/" variant="outline">
               Volver al inicio
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

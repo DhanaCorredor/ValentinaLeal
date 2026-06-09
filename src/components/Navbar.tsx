@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { site, whatsappLink } from "@/data/site";
+import { usePathname } from "next/navigation";
+import { linkReserva } from "@/data/site";
+import Button from "@/components/Button";
 
 const links = [
   { label: "Inicio", href: "/" },
@@ -12,6 +14,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-white/90 backdrop-blur-md">
@@ -29,19 +32,17 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-xs uppercase tracking-[0.12em] text-ink-soft transition-colors hover:text-gold-deep"
+              aria-current={l.href === pathname ? "page" : undefined}
+              className={`text-xs uppercase tracking-[0.12em] transition-colors hover:text-gold-deep ${
+                l.href === pathname ? "text-gold-deep" : "text-ink-soft"
+              }`}
             >
               {l.label}
             </Link>
           ))}
-          <a
-            href={whatsappLink(`Hola 👋, quiero reservar una cita en ${site.fullName}.`)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="gold-bg rounded-sm border border-gold px-5 py-2.5 text-xs font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
-          >
+          <Button href={linkReserva()} external size="sm" className="text-xs">
             Reservar
-          </a>
+          </Button>
         </div>
 
         {/* Botón hamburguesa (móvil) */}
@@ -75,20 +76,22 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-2.5 text-sm uppercase tracking-[0.12em] text-ink transition-colors hover:text-gold-deep"
+                aria-current={l.href === pathname ? "page" : undefined}
+                className={`py-2.5 text-sm uppercase tracking-[0.12em] transition-colors hover:text-gold-deep ${
+                  l.href === pathname ? "text-gold-deep" : "text-ink"
+                }`}
               >
                 {l.label}
               </Link>
             ))}
-            <a
-              href={whatsappLink(`Hola 👋, quiero reservar una cita en ${site.fullName}.`)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
+              href={linkReserva()}
+              external
+              className="mt-3 w-full"
               onClick={() => setOpen(false)}
-              className="gold-bg mt-3 rounded-sm border border-gold py-3 text-center text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407]"
             >
               Reservar por WhatsApp
-            </a>
+            </Button>
           </div>
         </div>
       )}

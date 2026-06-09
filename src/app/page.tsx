@@ -1,12 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
-import { site, whatsappLink, mapsEmbedUrl } from "@/data/site";
+import { site, mapsEmbedUrl, linkReserva } from "@/data/site";
 import { serviceCategories } from "@/data/services";
+import Button from "@/components/Button";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function Home() {
-  const reservar = whatsappLink(
-    `Hola 👋, quiero reservar una cita en ${site.fullName}.`,
-  );
+  const reservar = linkReserva();
 
   return (
     <>
@@ -31,12 +30,7 @@ export default function Home() {
             detalle cuidado para que tus manos hablen por ti.
           </p>
           <div className="mt-7 flex justify-center">
-            <Link
-              href="/servicios"
-              className="gold-bg rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
-            >
-              Ver servicios
-            </Link>
+            <Button href="/servicios">Ver servicios</Button>
           </div>
         </div>
       </section>
@@ -64,13 +58,9 @@ export default function Home() {
       {/* SERVICIOS (resumen → pestaña aparte) */}
       <section className="px-5 py-14">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mx-auto mb-4 h-0.5 w-12 rounded gold-bg" />
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
-            Carta de servicios
-          </p>
-          <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+          <SectionHeading eyebrow="Carta de servicios">
             Nuestros <span className="gold-text">servicios</span>
-          </h2>
+          </SectionHeading>
           <p className="mx-auto mt-3 max-w-md text-ink-soft">
             Más de 20 servicios de manicura, pedicura y diseño de uñas. Mira la
             carta completa con precios.
@@ -87,12 +77,9 @@ export default function Home() {
             ))}
           </div>
 
-          <Link
-            href="/servicios"
-            className="gold-bg mt-9 inline-block rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
-          >
+          <Button href="/servicios" className="mt-9">
             Ver todos los servicios →
-          </Link>
+          </Button>
         </div>
       </section>
 
@@ -110,12 +97,9 @@ export default function Home() {
             />
           </div>
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
-              Sobre el estudio
-            </p>
-            <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+            <SectionHeading eyebrow="Sobre el estudio" align="left" divider={false}>
               Donde el <span className="gold-text">detalle</span> lo es todo
-            </h2>
+            </SectionHeading>
             <p className="mt-5 text-ink-soft">
               En {site.fullName} creemos que unas uñas bien cuidadas son un
               gesto de elegancia. Trabajamos con productos premium y técnicas de
@@ -125,14 +109,9 @@ export default function Home() {
               Bioseguridad, materiales de primera calidad y un acabado impecable
               en cada cita.
             </p>
-            <a
-              href={reservar}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-block rounded-sm border border-ink bg-ink px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition hover:bg-black"
-            >
+            <Button href={reservar} external variant="dark" className="mt-6">
               Agenda tu cita
-            </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -140,14 +119,10 @@ export default function Home() {
       {/* UBICACIÓN */}
       <section id="ubicacion" className="px-5 py-14">
         <div className="mx-auto max-w-5xl">
-          <div className="mb-8 text-center">
-            <div className="mx-auto mb-4 h-0.5 w-12 rounded gold-bg" />
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
-              Cómo llegar
-            </p>
-            <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+          <div className="mb-8">
+            <SectionHeading eyebrow="Cómo llegar">
               Nuestra <span className="gold-text">ubicación</span>
-            </h2>
+            </SectionHeading>
           </div>
           <div className="grid items-center gap-8 md:grid-cols-2">
             <div className="overflow-hidden rounded border border-gold/35">
@@ -175,14 +150,9 @@ export default function Home() {
                 <strong className="font-medium text-ink">Teléfono:</strong>{" "}
                 {site.phone}
               </p>
-              <a
-                href={reservar}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gold-bg mt-6 inline-block rounded-sm border border-gold px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407]"
-              >
+              <Button href={reservar} external className="mt-6">
                 Reservar cita
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -200,14 +170,9 @@ export default function Home() {
           <p className="mt-4 text-base text-[#bdb6aa] sm:text-lg">
             Escríbenos por WhatsApp y agenda en segundos.
           </p>
-          <a
-            href={reservar}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="gold-bg mt-8 inline-block rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
-          >
+          <Button href={reservar} external className="mt-8">
             Reservar por WhatsApp →
-          </a>
+          </Button>
         </div>
       </section>
     </>

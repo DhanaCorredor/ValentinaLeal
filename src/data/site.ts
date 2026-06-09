@@ -31,6 +31,12 @@ export function whatsappLink(message?: string): string {
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
+// Enlace de WhatsApp con el mensaje de reserva por defecto. Se reutiliza en
+// el navbar, footer, CTA y barra flotante para no repetir el texto.
+export function linkReserva(): string {
+  return whatsappLink(`Hola 👋, quiero reservar una cita en ${site.fullName}.`);
+}
+
 // Enlace al mapa embebido de Google Maps (no requiere API key).
 // Si hay coordenadas exactas, las usa (pin preciso); si no, geocodifica el texto.
 export const mapsEmbedUrl = site.mapsCoords
