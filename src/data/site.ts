@@ -4,6 +4,8 @@ export const site = {
   name: "Valentina Leal",
   fullName: "Valentina Leal Studio Nails",
   tagline: "Studio Nails",
+  // URL de producción. Se usa para SEO (canonical, OpenGraph, sitemap).
+  url: "https://valentina-leal.vercel.app",
   phone: "316 050 2149",
   phoneIntl: "+573160502149",
   whatsapp: "573160502149", // formato internacional sin "+" para wa.me
@@ -36,3 +38,31 @@ export const mapsEmbedUrl = site.mapsCoords
   : `https://maps.google.com/maps?q=${encodeURIComponent(
       site.mapsQuery,
     )}&z=17&output=embed`;
+
+// Datos estructurados (JSON-LD) para SEO local: le indican a Google que esto
+// es un salón de uñas con su nombre, dirección, teléfono y redes. Mejora la
+// aparición en Google Maps y en resultados enriquecidos.
+export function localBusinessJsonLd() {
+  const [lat, lng] = site.mapsCoords.split(",");
+  return {
+    "@context": "https://schema.org",
+    "@type": "NailSalon",
+    name: site.fullName,
+    image: `${site.url}/logo.png`,
+    url: site.url,
+    telephone: site.phoneIntl,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: site.addressShort,
+      addressLocality: "Palmira",
+      addressRegion: "Valle del Cauca",
+      addressCountry: "CO",
+    },
+    // El geo solo se añade cuando hay coordenadas exactas del local.
+    ...(site.mapsCoords
+      ? { geo: { "@type": "GeoCoordinates", latitude: lat, longitude: lng } }
+      : {}),
+    sameAs: [site.instagram],
+  };
+}

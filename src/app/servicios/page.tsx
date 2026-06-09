@@ -4,7 +4,7 @@ import { serviceCategories, formatCOP } from "@/data/services";
 import { site, whatsappLink } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: `Servicios y precios | ${site.fullName}`,
+  title: "Servicios y precios",
   description:
     "Carta completa de servicios de uñas con precios: manicura, pedicura, semipermanente, gel, acrílico, poly gel, retiros y adicionales.",
 };

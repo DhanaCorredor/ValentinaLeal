@@ -3,7 +3,7 @@ import LegalPage from "@/components/LegalPage";
 import { site, whatsappLink } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: `Política de privacidad | ${site.fullName}`,
+  title: "Política de privacidad",
   description:
     "Política de tratamiento de datos personales conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013.",
 };

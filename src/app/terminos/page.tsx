@@ -3,7 +3,7 @@ import LegalPage from "@/components/LegalPage";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: `Términos y condiciones | ${site.fullName}`,
+  title: "Términos y condiciones",
   description:
     "Términos y condiciones de uso del sitio web de Valentina Leal Studio Nails.",
 };
