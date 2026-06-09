@@ -9,6 +9,9 @@ export const site = {
   whatsapp: "573160502149", // formato internacional sin "+" para wa.me
   instagram: "https://www.instagram.com/valentinaleal.studionails",
   instagramHandle: "@valentinaleal.studionails",
+  // Opcional: correo para solicitudes de datos personales (Habeas Data).
+  // Si se deja vacío, las páginas legales usan WhatsApp como canal.
+  email: "",
   address: "Cra. 29 #23-9, Palmira, Valle del Cauca",
   addressShort: "Cra. 29 #23-9",
   city: "Palmira, Valle del Cauca",

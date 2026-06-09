@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { site, whatsappLink } from "@/data/site";
 
 export default function Footer() {
@@ -62,9 +63,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-10 border-t border-gold-light/20 pt-6 text-xs text-[#867f73]">
-          © {new Date().getFullYear()} {site.fullName} · Todos los derechos reservados
-        </p>
+        <div className="mt-10 border-t border-gold-light/20 pt-6">
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs">
+            <Link href="/privacidad" className="transition-colors hover:text-gold-light">
+              Política de privacidad
+            </Link>
+            <Link href="/terminos" className="transition-colors hover:text-gold-light">
+              Términos y condiciones
+            </Link>
+          </nav>
+          <p className="mt-4 text-xs text-[#867f73]">
+            © {new Date().getFullYear()} {site.fullName} · Todos los derechos reservados
+          </p>
+        </div>
       </div>
     </footer>
   );
