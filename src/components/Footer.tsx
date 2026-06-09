@@ -13,7 +13,7 @@ export default function Footer() {
           height={4219}
           className="mx-auto mb-4 h-auto w-36"
         />
-        <p className="text-sm">El arte de unas uñas perfectas.</p>
+        <p className="text-sm">El arte en tus manos.</p>
 
         <div className="mt-8 grid gap-8 sm:grid-cols-3">
           <div>

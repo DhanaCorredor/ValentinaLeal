@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: site.fullName,
     description:
-      "El arte de unas uñas perfectas. Reserva tu cita por WhatsApp.",
+      "El arte en tus manos. Reserva tu cita por WhatsApp.",
     type: "website",
   },
 };
