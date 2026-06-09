@@ -6,6 +6,5 @@
       <stop offset="1" stop-color="#a9842f" />
     </linearGradient>
   </defs>
-  <rect width="32" height="32" rx="7" fill="#141210" />
-  <text x="16" y="22" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="600" letter-spacing="0.5" fill="url(#vl)">VL</text>
+  <text x="16" y="24" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" letter-spacing="0.5" fill="url(#vl)">VL</text>
 </svg>
