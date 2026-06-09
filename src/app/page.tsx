@@ -95,6 +95,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NOSOTRAS */}
+      <section id="nosotras" className="bg-paper px-5 py-14">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
+          {/* Foto temporal de Unsplash — reemplazar por una del estudio. */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded border border-gold/35 md:aspect-[4/5]">
+            <Image
+              src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80"
+              alt="Manos con manicura cuidada"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
+              Sobre el estudio
+            </p>
+            <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+              Donde el <span className="gold-text">detalle</span> lo es todo
+            </h2>
+            <p className="mt-5 text-ink-soft">
+              En {site.fullName} creemos que unas uñas bien cuidadas son un
+              gesto de elegancia. Trabajamos con productos premium y técnicas de
+              larga duración en un espacio pensado para tu comodidad.
+            </p>
+            <p className="mt-3 text-ink-soft">
+              Bioseguridad, materiales de primera calidad y un acabado impecable
+              en cada cita.
+            </p>
+            <a
+              href={reservar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block rounded-sm border border-ink bg-ink px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition hover:bg-black"
+            >
+              Agenda tu cita
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* UBICACIÓN */}
       <section id="ubicacion" className="px-5 py-14">
         <div className="mx-auto max-w-5xl">
