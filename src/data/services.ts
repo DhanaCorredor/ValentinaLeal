@@ -54,7 +54,7 @@ export const serviceCategories: ServiceCategory[] = [
   },
 ];
 
-// Formatea un número como precio en COP: 40000 -> "$40.000"
+// Formatea un número como precio en COP: 40000 -> "$40.000 COP"
 export function formatCOP(value: number): string {
-  return `$${value.toLocaleString("es-CO")}`;
+  return `$${value.toLocaleString("es-CO")} COP`;
 }

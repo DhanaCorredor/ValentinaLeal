@@ -29,18 +29,10 @@ export default function Home() {
             Manicura, pedicura y diseño en gel, acrílico y poly gel. Cada
             detalle cuidado para que tus manos hablen por ti.
           </p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <a
-              href={reservar}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gold-bg rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
-            >
-              Reservar por WhatsApp
-            </a>
+          <div className="mt-7 flex justify-center">
             <Link
               href="/servicios"
-              className="rounded-sm border border-[#d8d2c8] px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-ink transition hover:border-gold hover:text-gold-deep"
+              className="gold-bg rounded-sm border border-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.12em] text-[#1a1407] transition hover:brightness-105"
             >
               Ver servicios
             </Link>
@@ -49,7 +41,7 @@ export default function Home() {
       </section>
 
       {/* FRANJA DE DATOS */}
-      <section className="grid grid-cols-2 border-y border-gold/35 md:grid-cols-4">
+      <section className="hidden border-y border-gold/35 md:grid md:grid-cols-4">
         {[
           { big: "+20", small: "Servicios" },
           { big: "Gel · Acrílico", small: "Poly gel · Dipping" },
@@ -106,8 +98,15 @@ export default function Home() {
       {/* NOSOTRAS */}
       <section id="nosotras" className="bg-paper px-5 py-14">
         <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
-          <div className="flex aspect-[4/3] items-center justify-center rounded border border-gold/35 bg-white p-4 text-center text-xs uppercase tracking-[0.12em] text-ink-soft md:aspect-[4/5]">
-            [ Foto del estudio / trabajos ]
+          {/* Foto temporal de Unsplash — reemplazar por una del estudio. */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded border border-gold/35 md:aspect-[4/5]">
+            <Image
+              src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80"
+              alt="Manos con manicura cuidada"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
           <div>
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">

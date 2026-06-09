@@ -40,8 +40,7 @@ export default function RootLayout({
       lang="es"
       className={`${serif.variable} ${sans.variable} h-full antialiased`}
     >
-      {/* pb-20 deja espacio para la barra fija de "Reservar" en móvil */}
-      <body className="min-h-full flex flex-col bg-white pb-20 md:pb-0">
+      <body className="min-h-full flex flex-col bg-white">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

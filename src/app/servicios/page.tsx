@@ -16,9 +16,6 @@ export default function ServiciosPage() {
         {/* Encabezado */}
         <div className="text-center">
           <div className="mx-auto mb-4 h-0.5 w-12 rounded gold-bg" />
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-gold-deep">
-            Carta de servicios
-          </p>
           <h1 className="font-serif text-4xl font-semibold sm:text-6xl">
             Nuestros <span className="gold-text">servicios</span>
           </h1>
