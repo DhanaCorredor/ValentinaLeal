@@ -7,7 +7,6 @@ import { site, whatsappLink } from "@/data/site";
 const links = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/servicios" },
-  { label: "Nosotras", href: "/#nosotras" },
   { label: "Ubicación", href: "/#ubicacion" },
 ];
 

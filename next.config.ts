@@ -6,10 +6,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  // Hosts externos permitidos para next/image (foto temporal de Unsplash).
-  images: {
-    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
-  },
 };
 
 export default nextConfig;
