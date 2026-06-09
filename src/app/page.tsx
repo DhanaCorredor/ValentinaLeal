@@ -22,8 +22,9 @@ export default function Home() {
             priority
             className="mx-auto mb-2 h-auto w-56 sm:w-64"
           />
-          <h1 className="font-serif text-[2.6rem] font-semibold leading-tight sm:text-6xl">
-            El arte de unas <span className="gold-text">uñas perfectas</span>
+          <h1 className="font-serif text-[2.75rem] font-semibold leading-[1.1] sm:text-6xl">
+            El arte de las{" "}
+            <span className="gold-text block sm:inline">uñas perfectas</span>
           </h1>
           <p className="mx-auto mt-4 max-w-md text-base text-ink-soft sm:text-lg">
             Manicura, pedicura y diseño en gel, acrílico y poly gel. Cada
