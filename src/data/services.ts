@@ -17,7 +17,6 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Manicura tradicional", price: 26000 },
       { name: "Pedicure tradicional", price: 30000 },
       { name: "Pedicure semipermanente", price: 50000 },
-      { name: "Pedí spa", price: 60000 },
     ],
   },
   {
@@ -26,7 +25,7 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Semipermanente", price: 55000 },
       { name: "Semi + base rubber", price: 85000 },
       { name: "Base rubber", price: 65000 },
-      { name: "Soft gel", price: 85000 },
+      { name: "Soft gel", price: 90000 },
       { name: "Recubrimiento poly gel", price: 90000 },
       { name: "Dipping", price: 60000 },
     ],
