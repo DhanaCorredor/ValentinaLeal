@@ -14,6 +14,10 @@ export const site = {
   // Opcional: correo para solicitudes de datos personales (Habeas Data).
   // Si se deja vacío, las páginas legales usan WhatsApp como canal.
   email: "",
+  // Página de reservas de Google Calendar (Appointment Schedule).
+  // Mientras esté vacío, los botones "Reservar cita" abren WhatsApp.
+  // Para activarlo: pega aquí el enlace tipo https://calendar.google.com/book/...
+  bookingUrl: "",
   address: "Cra. 29 #23-9, Palmira, Valle del Cauca",
   addressShort: "Cra. 29 #23-9",
   city: "Palmira, Valle del Cauca",
@@ -32,9 +36,15 @@ export function whatsappLink(message?: string): string {
 }
 
 // Enlace de WhatsApp con el mensaje de reserva por defecto. Se reutiliza en
-// el navbar, footer, CTA y barra flotante para no repetir el texto.
+// el navbar, footer y barra flotante para no repetir el texto.
 export function linkReserva(): string {
   return whatsappLink(`Hola 👋, quiero reservar una cita en ${site.fullName}.`);
+}
+
+// Destino de los botones "Reservar cita": la página de Google Calendar si
+// está configurada; si no, abre WhatsApp como alternativa.
+export function reservaHref(): string {
+  return site.bookingUrl || linkReserva();
 }
 
 // Enlace al mapa embebido de Google Maps (no requiere API key).

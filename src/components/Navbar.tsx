@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { linkReserva } from "@/data/site";
+import { reservaHref } from "@/data/site";
 import Button from "@/components/Button";
 
 const links = [
@@ -40,7 +40,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Button href={linkReserva()} external size="sm" className="text-xs">
+          <Button href={reservaHref()} external size="sm" className="text-xs">
             Reservar
           </Button>
         </div>
@@ -85,12 +85,12 @@ export default function Navbar() {
               </Link>
             ))}
             <Button
-              href={linkReserva()}
+              href={reservaHref()}
               external
               className="mt-3 w-full"
               onClick={() => setOpen(false)}
             >
-              Reservar por WhatsApp
+              Reservar cita
             </Button>
           </div>
         </div>

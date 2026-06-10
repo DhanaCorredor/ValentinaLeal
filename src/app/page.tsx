@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { site, mapsEmbedUrl, linkReserva } from "@/data/site";
+import { site, mapsEmbedUrl, reservaHref } from "@/data/site";
 import { serviceCategories } from "@/data/services";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 
 export default function Home() {
-  const reservar = linkReserva();
+  const reservar = reservaHref();
 
   return (
     <>
@@ -168,10 +168,10 @@ export default function Home() {
             ¿Lista para <span className="gold-text">consentirte</span>?
           </h2>
           <p className="mt-4 text-base text-[#bdb6aa] sm:text-lg">
-            Escríbenos por WhatsApp y agenda en segundos.
+            Reserva tu cita en segundos.
           </p>
           <Button href={reservar} external className="mt-8">
-            Reservar por WhatsApp →
+            Reservar cita →
           </Button>
         </div>
       </section>
