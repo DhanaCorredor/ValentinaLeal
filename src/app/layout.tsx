@@ -19,7 +19,7 @@ const sans = Jost({
 });
 
 const descripcion =
-  "Studio de uñas en Yopal: manicura, pedicura y diseño en gel, acrílico y poly gel. Reserva tu cita por WhatsApp.";
+  "Studio de uñas en Yopal, Casanare: manicura, pedicura y diseño en gel, acrílico y poly gel. Agenda tu cita en línea.";
 
 export const metadata: Metadata = {
   // Base para resolver URLs absolutas (canonical, OpenGraph, etc.).
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     title: site.fullName,
-    description: "El arte en tus manos. Reserva tu cita por WhatsApp.",
+    description: "El arte en tus manos. Agenda tu cita en línea.",
     url: site.url,
     siteName: site.fullName,
     locale: "es_CO",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: site.fullName,
-    description: "El arte en tus manos. Reserva tu cita por WhatsApp.",
+    description: "El arte en tus manos. Agenda tu cita en línea.",
     images: ["/logo.png"],
   },
   robots: { index: true, follow: true },

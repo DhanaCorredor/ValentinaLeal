@@ -14,7 +14,7 @@ export default function PrivacidadPage() {
   );
 
   return (
-    <LegalPage title="Política de privacidad" updated="9 de junio de 2026">
+    <LegalPage title="Política de privacidad" updated="12 de junio de 2026">
       <p>
         En <strong>{site.fullName}</strong> respetamos tu privacidad. Esta
         política explica cómo tratamos los datos personales de acuerdo con la{" "}
@@ -32,10 +32,13 @@ export default function PrivacidadPage() {
       <h2>2. Qué datos tratamos</h2>
       <p>
         Este sitio web es <strong>solo informativo</strong>: no tiene
-        formularios ni recoge datos por sí mismo. Cuando decides agendar a
-        través de WhatsApp, recibimos únicamente los datos que nos compartes de
-        forma voluntaria, como tu nombre, tu número de teléfono y los detalles
-        de la cita que deseas.
+        formularios ni recoge datos por sí mismo. Cuando decides agendar tu
+        cita, recibimos únicamente los datos que compartes de forma voluntaria,
+        como tu nombre, tu número de teléfono o correo y los detalles de la cita
+        que deseas, ya sea a través de <strong>Google Calendar</strong> o de{" "}
+        <strong>WhatsApp</strong>. Si reservas por Google Calendar, esos datos
+        también se procesan en los servidores de Google conforme a su propia
+        política de privacidad.
       </p>
 
       <h2>3. Finalidad</h2>
@@ -54,7 +57,8 @@ export default function PrivacidadPage() {
       <p>
         Este sitio <strong>no utiliza cookies de seguimiento</strong> ni
         herramientas de analítica de terceros. Por eso no verás un aviso de
-        cookies al navegar.
+        cookies al navegar. La página de reservas de Google Calendar es un
+        servicio externo y se rige por las cookies y políticas de Google.
       </p>
 
       <h2>5. Tus derechos</h2>

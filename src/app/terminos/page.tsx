@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TerminosPage() {
   return (
-    <LegalPage title="Términos y condiciones" updated="9 de junio de 2026">
+    <LegalPage title="Términos y condiciones" updated="12 de junio de 2026">
       <p>
         Al usar el sitio web de <strong>{site.fullName}</strong> aceptas estos
         términos. Te pedimos leerlos con calma.
@@ -19,8 +19,8 @@ export default function TerminosPage() {
       <h2>1. Objeto del sitio</h2>
       <p>
         Este sitio es <strong>informativo</strong>: presenta el estudio, su
-        carta de servicios y facilita la reserva de citas a través de WhatsApp.
-        No es una tienda en línea ni procesa pagos.
+        carta de servicios y facilita la reserva de citas en línea a través de
+        Google Calendar y WhatsApp. No es una tienda en línea ni procesa pagos.
       </p>
 
       <h2>2. Servicios y precios</h2>
@@ -33,8 +33,9 @@ export default function TerminosPage() {
 
       <h2>3. Reservas</h2>
       <p>
-        Las reservas se gestionan por WhatsApp y están sujetas a
-        disponibilidad. Agendar una cita implica un compromiso de asistencia; si
+        Las reservas se gestionan a través de Google Calendar y WhatsApp, y
+        están sujetas a disponibilidad. Agendar una cita implica un compromiso
+        de asistencia; si
         no puedes asistir, te agradecemos avisarnos con anticipación.
       </p>
 
@@ -47,8 +48,8 @@ export default function TerminosPage() {
 
       <h2>5. Enlaces a terceros</h2>
       <p>
-        El sitio enlaza a servicios externos como WhatsApp e Instagram, que se
-        rigen por sus propias políticas y condiciones. No nos hacemos
+        El sitio enlaza a servicios externos como Google Calendar, WhatsApp e
+        Instagram, que se rigen por sus propias políticas y condiciones. No nos hacemos
         responsables de su contenido o disponibilidad.
       </p>
 
