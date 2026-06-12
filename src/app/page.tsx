@@ -39,7 +39,7 @@ export default function Home() {
         {[
           { big: "+20", small: "Servicios" },
           { big: "Gel · Acrílico", small: "Poly gel · Dipping" },
-          { big: site.addressShort, small: "Palmira, V. del Cauca" },
+          { big: site.addressShort, small: "Yopal, Casanare" },
           { big: site.phone, small: "Citas" },
         ].map((s, i) => (
           <div

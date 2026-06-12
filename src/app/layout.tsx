@@ -19,7 +19,7 @@ const sans = Jost({
 });
 
 const descripcion =
-  "Studio de uñas en Palmira: manicura, pedicura y diseño en gel, acrílico y poly gel. Reserva tu cita por WhatsApp.";
+  "Studio de uñas en Yopal: manicura, pedicura y diseño en gel, acrílico y poly gel. Reserva tu cita por WhatsApp.";
 
 export const metadata: Metadata = {
   // Base para resolver URLs absolutas (canonical, OpenGraph, etc.).
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
   },
   description: descripcion,
   keywords: [
-    "uñas Palmira",
-    "manicura Palmira",
-    "pedicura Palmira",
+    "uñas Yopal",
+    "manicura Yopal",
+    "pedicura Yopal",
     "uñas acrílicas",
     "poly gel",
     "semipermanente",
-    "nail studio Palmira",
+    "nail studio Yopal",
     "Valentina Leal",
   ],
   alternates: { canonical: "/" },

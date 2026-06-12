@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { serviceCategories, formatCOP } from "@/data/services";
+import { serviceCategories, servicePriceLabel } from "@/data/services";
 import { whatsappLink, reservaHref } from "@/data/site";
 import Button from "@/components/Button";
 
@@ -41,9 +41,11 @@ export default function ServiciosPage() {
                   <li key={service.name}>
                     <a
                       href={whatsappLink(
-                        `Hola 👋, quiero reservar: ${service.name} (${formatCOP(
-                          service.price,
-                        )}).`,
+                        service.note
+                          ? `Hola 👋, quiero reservar: ${service.name}.`
+                          : `Hola 👋, quiero reservar: ${service.name} (${servicePriceLabel(
+                              service,
+                            )}).`,
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -51,9 +53,15 @@ export default function ServiciosPage() {
                     >
                       <span className="text-[15px]">{service.name}</span>
                       <span className="min-w-0 flex-1 translate-y-[-4px] border-b border-dotted border-[#cfc8bb]" />
-                      <span className="gold-text whitespace-nowrap font-serif text-lg font-semibold">
-                        {formatCOP(service.price)}
-                      </span>
+                      {service.note ? (
+                        <span className="whitespace-nowrap text-sm italic text-ink-soft">
+                          {service.note}
+                        </span>
+                      ) : (
+                        <span className="gold-text whitespace-nowrap font-serif text-lg font-semibold">
+                          {servicePriceLabel(service)}
+                        </span>
+                      )}
                     </a>
                   </li>
                 ))}

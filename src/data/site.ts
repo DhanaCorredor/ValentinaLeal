@@ -17,12 +17,12 @@ export const site = {
   // Página de reservas de Google Calendar (Appointment Schedule).
   // Mientras esté vacío, los botones "Reservar cita" abren WhatsApp.
   // Para activarlo: pega aquí el enlace tipo https://calendar.google.com/book/...
-  bookingUrl: "",
-  address: "Cra. 29 #23-9, Palmira, Valle del Cauca",
-  addressShort: "Cra. 29 #23-9",
-  city: "Palmira, Valle del Cauca",
+  bookingUrl: "https://calendar.app.google/3WktyWkTfzgnm13h9",
+  address: "Cra. 20 #12-40, Yopal, Casanare",
+  addressShort: "Cra. 20 #12-40",
+  city: "Yopal, Casanare",
   // Texto de la dirección para geocodificar (formato canónico).
-  mapsQuery: "Carrera 29 # 23-9, Palmira, Valle del Cauca, Colombia",
+  mapsQuery: "Carrera 20 # 12-40, Yopal, Casanare, Colombia",
   // Coordenadas EXACTAS del local "lat,lng". Cuando se tengan (desde el enlace
   // de Google Maps del negocio), el mapa usa el pin exacto en vez del texto.
   mapsCoords: "", // ej: "3.5256703,-76.3000872"
@@ -71,8 +71,8 @@ export function localBusinessJsonLd() {
     address: {
       "@type": "PostalAddress",
       streetAddress: site.addressShort,
-      addressLocality: "Palmira",
-      addressRegion: "Valle del Cauca",
+      addressLocality: "Yopal",
+      addressRegion: "Casanare",
       addressCountry: "CO",
     },
     // El geo solo se añade cuando hay coordenadas exactas del local.

@@ -1,6 +1,6 @@
 # Valentina Leal Studio Nails 💅
 
-Sitio web **mobile-first** para un studio de uñas en Palmira (Valle del Cauca).
+Sitio web **mobile-first** para un studio de uñas en Yopal (Casanare).
 Muestra la marca, la carta de servicios con precios y permite **reservar por
 WhatsApp**, sin backend ni base de datos.
 
