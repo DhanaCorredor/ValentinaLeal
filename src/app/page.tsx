@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { site, mapsEmbedUrl, reservaHref } from "@/data/site";
+import { site, mapsEmbedUrl } from "@/data/site";
 import { serviceCategories } from "@/data/services";
 import Button from "@/components/Button";
+import ReserveButtons from "@/components/ReserveButtons";
 import SectionHeading from "@/components/SectionHeading";
 
 export default function Home() {
-  const reservar = reservaHref();
-
   return (
     <>
       {/* HERO */}
@@ -108,9 +107,9 @@ export default function Home() {
               Bioseguridad, materiales de primera calidad y un acabado impecable
               en cada cita.
             </p>
-            <Button href={reservar} external variant="dark" className="mt-6">
-              Agenda tu cita
-            </Button>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <ReserveButtons label="Agenda tu cita" variant="dark" />
+            </div>
           </div>
         </div>
       </section>
@@ -149,9 +148,9 @@ export default function Home() {
                 <strong className="font-medium text-ink">Teléfono:</strong>{" "}
                 {site.phone}
               </p>
-              <Button href={reservar} external className="mt-6">
-                Reservar cita
-              </Button>
+              <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
+                <ReserveButtons label="Reservar cita" />
+              </div>
             </div>
           </div>
         </div>
@@ -169,9 +168,9 @@ export default function Home() {
           <p className="mt-4 text-base text-[#bdb6aa] sm:text-lg">
             Reserva tu cita en segundos.
           </p>
-          <Button href={reservar} external className="mt-8">
-            Reservar cita →
-          </Button>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <ReserveButtons label="Reservar cita →" />
+          </div>
         </div>
       </section>
     </>

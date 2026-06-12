@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { reservaHref } from "@/data/site";
+import { reservaHref, activeBookings } from "@/data/site";
 import Button from "@/components/Button";
 
 const links = [
@@ -15,6 +15,12 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  // Con 2+ manicuristas no se puede elegir desde un solo botón compacto, así que
+  // lleva a la sección de reserva del inicio (donde están los dos botones). Con
+  // una sola agenda, va directo a su enlace.
+  const variasAgendas = activeBookings().length >= 2;
+  const reservar = variasAgendas ? "/#reservar" : reservaHref();
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-white/90 backdrop-blur-md">
@@ -40,7 +46,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Button href={reservaHref()} external size="sm" className="text-xs">
+          <Button href={reservar} external={!variasAgendas} size="sm" className="text-xs">
             Reservar
           </Button>
         </div>
@@ -85,8 +91,8 @@ export default function Navbar() {
               </Link>
             ))}
             <Button
-              href={reservaHref()}
-              external
+              href={reservar}
+              external={!variasAgendas}
               className="mt-3 w-full"
               onClick={() => setOpen(false)}
             >

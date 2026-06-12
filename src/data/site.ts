@@ -14,10 +14,16 @@ export const site = {
   // Opcional: correo para solicitudes de datos personales (Habeas Data).
   // Si se deja vacío, las páginas legales usan WhatsApp como canal.
   email: "",
-  // Página de reservas de Google Calendar (Appointment Schedule).
-  // Mientras esté vacío, los botones "Reservar cita" abren WhatsApp.
-  // Para activarlo: pega aquí el enlace tipo https://calendar.google.com/book/...
-  bookingUrl: "https://calendar.app.google/3WktyWkTfzgnm13h9",
+  // Manicuristas que pueden recibir reservas. Cada una con su enlace de Google
+  // Calendar ("appointment schedule" propio: https://calendar.app.google/...),
+  // así dos clientas pueden reservar la misma hora con manicuristas distintas.
+  // Si una no tiene agenda, deja `url` vacío y el sitio le arma un enlace de
+  // WhatsApp con su nombre. Con nombre vacío, el cupo se ignora. Con una sola
+  // manicurista, el sitio muestra un único botón "Reservar cita".
+  bookings: [
+    { name: "Valentina", url: "https://calendar.app.google/3WktyWkTfzgnm13h9" },
+    { name: "Tatiana", url: "" }, // sin agenda propia: reserva por WhatsApp
+  ],
   address: "Cra. 20 #12-40, Yopal, Casanare",
   addressShort: "Cra. 20 #12-40",
   city: "Yopal, Casanare",
@@ -41,10 +47,27 @@ export function linkReserva(): string {
   return whatsappLink(`Hola 👋, quiero reservar una cita en ${site.fullName}.`);
 }
 
-// Destino de los botones "Reservar cita": la página de Google Calendar si
-// está configurada; si no, abre WhatsApp como alternativa.
+// Manicuristas que se muestran para reservar (las que tienen nombre), cada una
+// con su enlace ya resuelto: su agenda de Google Calendar si la tiene `url`, o
+// un chat de WhatsApp con su nombre si reserva por ahí. Los cupos sin nombre
+// se ignoran.
+export function activeBookings() {
+  return site.bookings
+    .filter((b) => b.name)
+    .map((b) => ({
+      name: b.name,
+      href:
+        b.url ||
+        whatsappLink(
+          `Hola 👋, quiero reservar una cita con ${b.name} en ${site.fullName}.`,
+        ),
+    }));
+}
+
+// Destino del botón "Reservar" cuando hay UNA sola opción (o como alternativa):
+// la primera manicurista activa; si aún no hay ninguna, abre WhatsApp.
 export function reservaHref(): string {
-  return site.bookingUrl || linkReserva();
+  return activeBookings()[0]?.href || linkReserva();
 }
 
 // Enlace al mapa embebido de Google Maps (no requiere API key).

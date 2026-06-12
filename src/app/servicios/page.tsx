@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { serviceCategories, servicePriceLabel } from "@/data/services";
-import { whatsappLink, reservaHref } from "@/data/site";
+import { whatsappLink } from "@/data/site";
 import Button from "@/components/Button";
+import ReserveButtons from "@/components/ReserveButtons";
 
 export const metadata: Metadata = {
   title: "Servicios y precios",
@@ -79,9 +80,7 @@ export default function ServiciosPage() {
             Escríbenos y te asesoramos sobre el servicio ideal para ti.
           </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button href={reservaHref()} external>
-              Reservar cita
-            </Button>
+            <ReserveButtons />
             <Button href="/" variant="outline">
               Volver al inicio
             </Button>
