@@ -24,11 +24,11 @@ export const site = {
     { name: "Valentina", url: "https://calendar.app.google/3WktyWkTfzgnm13h9" },
     { name: "Tatiana", url: "" }, // sin agenda propia: reserva por WhatsApp
   ],
-  address: "Cra. 20 #12-40, Yopal, Casanare",
-  addressShort: "Cra. 20 #12-40",
+  address: "Cra. 29 #23-09, Yopal, Casanare",
+  addressShort: "Cra. 29 #23-09",
   city: "Yopal, Casanare",
   // Texto de la dirección para geocodificar (formato canónico).
-  mapsQuery: "Carrera 20 # 12-40, Yopal, Casanare, Colombia",
+  mapsQuery: "Carrera 29 # 23-09, Yopal, Casanare, Colombia",
   // Coordenadas EXACTAS del local "lat,lng". Cuando se tengan (desde el enlace
   // de Google Maps del negocio), el mapa usa el pin exacto en vez del texto.
   mapsCoords: "", // ej: "3.5256703,-76.3000872"
